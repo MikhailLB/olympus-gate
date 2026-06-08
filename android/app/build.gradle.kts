@@ -1,15 +1,27 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("dev.flutter.flutter-gradle-plugin")
+    id("com.google.gms.google-services")
+}
+
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("key.properties")
+val hasKeystoreProps = keystorePropertiesFile.exists()
+if (hasKeystoreProps) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
 android {
     namespace = "com.olygames.olympusgates"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -18,21 +30,30 @@ android {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
-    signingConfigs {
-        create("release") {
-            keyAlias = "olympusgates"
-            keyPassword = "OlympusG8te2024!"
-            storeFile = file("../keystore/olympusgates.jks")
-            storePassword = "OlympusG8te2024!"
-        }
-    }
-
     defaultConfig {
         applicationId = "com.olygames.olympusgates"
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk = 30
+        targetSdk = 35
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    signingConfigs {
+        if (hasKeystoreProps) {
+            create("release") {
+                storeFile = file(keystoreProperties["storeFile"] as String)
+                storePassword = keystoreProperties["storePassword"] as String
+                keyAlias = keystoreProperties["keyAlias"] as String
+                keyPassword = keystoreProperties["keyPassword"] as String
+            }
+        } else {
+            create("release") {
+                keyAlias = "olympusgates"
+                keyPassword = "OlympusG8te2024!"
+                storeFile = file("../keystore/olympusgates.jks")
+                storePassword = "OlympusG8te2024!"
+            }
+        }
     }
 
     buildTypes {
@@ -46,6 +67,10 @@ android {
             )
         }
     }
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
 }
 
 flutter {

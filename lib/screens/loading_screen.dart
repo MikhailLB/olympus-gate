@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../core/app_assets.dart';
 import '../core/app_theme.dart';
@@ -16,6 +17,18 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
   double _progress = 0;
   bool _started = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // The native game (white part) is portrait-only — re-lock here
+    // in case we arrived from a both-orientation gray-flow screen.
+    SystemChrome.setPreferredOrientations(const [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  }
 
   @override
   void didChangeDependencies() {

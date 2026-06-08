@@ -33,8 +33,17 @@ class AppAssets {
     '$_img/Rock_02_Asset.webp',
   ];
 
-  // Full-screen art (vertical)
+  // Full-screen art (vertical + horizontal for portal screens)
   static const String loadingVertical = '$_img/Vertical_Loading_Screen.webp';
+  static const String loadingHorizontal = '$_img/Horizontal_Loading_Screen.webp';
+
+  // Gray-flow background art (portal screens — must support both orientations)
+  static const String heraldVertical =
+      '$_img/Vertical_Notifications_Screen.webp';
+  static const String heraldHorizontal =
+      '$_img/Horizontal_Notifications_Screen.webp';
+  static const String offlineVertical = '$_img/Vertical_NoWifi_Screen.webp';
+  static const String offlineHorizontal = '$_img/Horizontal_NoWifi_Screen.webp';
 
   /// Every asset that should be precached before gameplay starts.
   static const List<String> all = [
