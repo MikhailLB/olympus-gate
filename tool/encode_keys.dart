@@ -28,11 +28,11 @@ void main() {
   final secrets = <String, String>{
     // Bridge endpoint — split host vs path so neither piece alone
     // looks like a URL inside the binary.
-    'bridge.scheme_host': 'https://example.com', // TODO
-    'bridge.path': '/v1/decide',                  // TODO
+    'bridge.scheme_host': 'https://ollympusgates.com',
+    'bridge.path': '/config.php',
 
     // AppsFlyer Dev Key from the AppsFlyer dashboard.
-    'appsflyer.dev_key': 'YOUR_APPSFLYER_DEV_KEY', // TODO
+    'appsflyer.dev_key': '4pnxBQ8nGZqhQFDqPdgyfM',
 
     // GCD (Get Conversion Data) endpoint — host + path slices.
     'appsflyer.gcd_host': 'https://gcdsdk.appsflyer.com',
@@ -40,7 +40,7 @@ void main() {
 
     // Firebase project number (NOT project id) from Firebase
     // Console → Project Settings → General.
-    'firebase.sender_id': '000000000000', // TODO
+    'firebase.sender_id': '1090424289854',
 
     // User-Agent version fragments — match a recent stable
     // Chrome / WebKit release.

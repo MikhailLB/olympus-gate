@@ -19,11 +19,15 @@ import '../cipher/oracle_cipher.dart';
 // the cipher mantra.
 // ============================================================
 
-// TODO: paste tool/encode_keys.dart → "ua.chrome_full"  (e.g. "131.0.0.0")
-const List<int> _chromeFragment = <int>[];
+// encoded "131.0.0.0"
+const List<int> _chromeFragment = <int>[
+  0x2C, 0xFE, 0xC4, 0x12, 0x29, 0xDF, 0x50, 0x3A, 0x51,
+];
 
-// TODO: paste tool/encode_keys.dart → "ua.webkit_full"  (e.g. "605.1.15")
-const List<int> _webkitFragment = <int>[];
+// encoded "605.1.15"
+const List<int> _webkitFragment = <int>[
+  0x2B, 0xFD, 0xC0, 0x12, 0x28, 0xDF, 0x51, 0x21,
+];
 
 class WebCourier extends http.BaseClient {
   WebCourier({http.Client? inner}) : _inner = inner ?? http.Client();

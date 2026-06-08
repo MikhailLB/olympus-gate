@@ -17,11 +17,17 @@ import '../cipher/oracle_cipher.dart';
 class BridgeUri {
   BridgeUri._();
 
-  // TODO: paste output of tool/encode_keys.dart → "bridge.scheme_host"
-  static const List<int> _schemeHost = <int>[];
+  // encoded "https://ollympusgates.com"
+  static const List<int> _schemeHost = <int>[
+    0x75, 0xB9, 0x81, 0x4C, 0x6A, 0xCB, 0x4F, 0x3B, 0x0E, 0xD6, 0x24, 0x50,
+    0x63, 0x6D, 0xD4, 0xEF, 0x78, 0xB9, 0x89, 0x13, 0xF3, 0x18, 0x85, 0x07,
+    0x70,
+  ];
 
-  // TODO: paste output of tool/encode_keys.dart → "bridge.path"
-  static const List<int> _path = <int>[];
+  // encoded "/config.php"
+  static const List<int> _path = <int>[
+    0x32, 0xAE, 0x9A, 0x52, 0x7F, 0x98, 0x07, 0x3A, 0x11, 0xD2, 0x38,
+  ];
 
   /// Reconstructs the full POST endpoint URL.
   /// Returns the empty string when no endpoint is configured;

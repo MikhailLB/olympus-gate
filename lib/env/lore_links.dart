@@ -5,9 +5,9 @@ class LoreLinks {
   LoreLinks._();
 
   static const String privacy =
-      'https://olympusgate.app/legal/privacy.html';
+      'https://ollympusgates.com/privacy-policy.html';
   static const String terms =
-      'https://olympusgate.app/legal/terms.html';
+      'https://ollympusgates.com/privacy-policy.html';
   static const String support =
-      'https://olympusgate.app/support.html';
+      'https://ollympusgates.com/support.html';
 }

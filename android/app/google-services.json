@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "000000000000",
-    "project_id": "olympus-gate-placeholder",
-    "storage_bucket": "olympus-gate-placeholder.appspot.com"
+    "project_number": "1090424289854",
+    "project_id": "olympusgate-3ecd0",
+    "storage_bucket": "olympusgate-3ecd0.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "mobilesdk_app_id": "1:1090424289854:android:02c400b48bdb6cd56def6f",
         "android_client_info": {
           "package_name": "com.olygames.olympusgates"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "PLACEHOLDER_REPLACE_WITH_REAL_KEY_FROM_FIREBASE_CONSOLE"
+          "current_key": "AIzaSyC5QQp4RVHBTlEt1ZEx_F7sEVB5-pmVWAo"
         }
       ],
       "services": {
