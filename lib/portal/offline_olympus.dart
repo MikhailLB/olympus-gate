@@ -67,13 +67,15 @@ class _OfflineOlympusState extends State<OfflineOlympus> {
               right: landscape ? size.width * 0.30 : size.width * 0.10,
               bottom:
                   landscape ? size.height * 0.08 : size.height * 0.09,
-              child: _checking
-                  ? const _ConnectingPlate()
-                  : MarbleButton(
-                      label: 'Retry the gate',
-                      onTap: _onRetry,
-                      compact: landscape,
-                    ),
+              child: Center(
+                child: _checking
+                    ? const _ConnectingPlate()
+                    : MarbleButton(
+                        label: 'Retry',
+                        onTap: _onRetry,
+                        compact: landscape,
+                      ),
+              ),
             ),
           ],
         ),
@@ -88,7 +90,7 @@ class _ConnectingPlate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
       decoration: BoxDecoration(
         color: AppColors.nightTop.withValues(alpha: 0.85),
         borderRadius: BorderRadius.circular(8),
@@ -99,23 +101,27 @@ class _ConnectingPlate extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(
-            width: 22,
-            height: 22,
+            width: 20,
+            height: 20,
             child: CircularProgressIndicator(
-              strokeWidth: 2.4,
+              strokeWidth: 2.2,
               valueColor:
                   AlwaysStoppedAnimation<Color>(AppColors.goldLight),
             ),
           ),
-          const SizedBox(width: 14),
-          Text(
-            'CALLING THE PANTHEON…',
-            style: TextStyle(
-              fontFamily: AppTheme.displayFont,
-              color: AppColors.goldLight,
-              fontSize: 14,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.3,
+          const SizedBox(width: 12),
+          Flexible(
+            child: Text(
+              'CONNECTING…',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: AppTheme.displayFont,
+                color: AppColors.goldLight,
+                fontSize: 13,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.2,
+              ),
             ),
           ),
         ],

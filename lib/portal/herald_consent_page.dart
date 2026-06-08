@@ -147,13 +147,13 @@ class _ButtonStack extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 MarbleButton(
-                  label: busy ? 'Opening…' : 'Allow Heralds',
+                  label: busy ? 'Opening…' : 'Accept',
                   onTap: busy ? null : onAllow,
                   compact: true,
                 ),
                 const SizedBox(height: 10),
                 _SkipLink(
-                  label: 'Maybe later',
+                  label: 'Skip',
                   onTap: busy ? null : onLater,
                 ),
               ],
@@ -171,12 +171,12 @@ class _ButtonStack extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           MarbleButton(
-            label: busy ? 'Opening…' : 'Allow Heralds',
+            label: busy ? 'Opening…' : 'Accept',
             onTap: busy ? null : onAllow,
           ),
           const SizedBox(height: 16),
           _SkipLink(
-            label: 'Maybe later',
+            label: 'Skip',
             onTap: busy ? null : onLater,
           ),
         ],
